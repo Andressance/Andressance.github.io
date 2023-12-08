@@ -1,0 +1,141 @@
+/* Tu CSS con estilos mejorados */
+/* Puedes experimentar con los colores, fuentes, márgenes, etc. */
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+   }
+   
+.fadeIn {
+ animation-name: fadeIn;
+ animation-duration: 1.5s;
+}
+
+.bot-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bot-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid black;
+  margin-left: 50px;
+}
+
+.bot-info {
+  position: absolute;
+  left: 50%; /* Ajusta este valor para cambiar la distancia entre la imagen y el texto */
+  top: -35px; /* Ajusta la distancia desde la parte superior según sea necesario */
+  width: 750px;
+  padding: 20px;
+  background-color: None;
+  opacity: 0;
+  transition: opacity 1.5s ease, left 1.5s ease; /* Modificamos la transición de la izquierda */
+  font-size: 15px;
+}
+
+.bot-info.visible {
+  opacity: 1;
+  left: 400px; /* Ajusta este valor para cambiar la posición final del texto */
+}
+
+
+#stats {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+
+
+h1, h2, h3 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 20px;
+}
+
+table {
+  width: 50%;
+}
+
+table tr {
+  border-bottom: 1px solid #ccc;
+}
+
+table tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 10px 0;
+  text-align: left;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #b7edfc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+  }
+  
+  header {
+    background-color: #1b4d77;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  h1, h2 {
+    margin: 20px 0;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  a {
+    color: #556B2F;
+    text-decoration: none;
+  }
+
+  ul li {
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
