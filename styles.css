@@ -1,5 +1,3 @@
-/* Tu CSS con estilos mejorados */
-/* Puedes experimentar con los colores, fuentes, márgenes, etc. */
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -63,7 +61,7 @@ p {
 }
 
 table {
-  width: 50%;
+  width: 90%;
 }
 
 table tr {
