@@ -39,20 +39,11 @@ margin-left: 50px;
   font-size: 1vw; /* Tamaño del texto en relación con el ancho de la pantalla */
 }
 
-@media screen and (max-width: 768px) {
-  .bot-info {
-    width: 90%;
-    left: 5%;
-    top: -15px;
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-}
 
 .bot-info.visible {
 opacity: 1;
 left: 40%;
+font-size: 1vw;
 }
 
 #stats {
@@ -95,15 +86,6 @@ footer {
   height: auto;
   max-width: 100%;
   height: auto;
-}
- 
-
-.bot-info {
-  width: 90%;
-  left: 10%;
-  top: -15px;
-  padding: 10px;
-  font-size: 14px;
 }
 
 #stats {
