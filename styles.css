@@ -2,17 +2,7 @@
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
-@media screen and (max-width: 768px) {
-  .bot-info.visible {
-    font-size: 0.5vw; /* Ajusta el tamaño del texto */
-    left: 5%; /* Alineación hacia la izquierda */
-    top: -15px; /* Posición desde arriba */
-    padding: 10px; /* Espaciado interno */
-    width: 90%; /* Ancho del elemento */
-  }
   
-  /* Otros ajustes para otros elementos según sea necesario */
-}
 .fadeIn {
 animation-name: fadeIn;
 animation-duration: 1.5s;
@@ -46,7 +36,7 @@ margin-left: 50px;
   right: 10%; /* Posición derecha del contenedor */
   top: -10%; /* Posición desde la parte superior del contenedor */
   padding: 5%; /* Ajuste de padding con unidades relativas */
-  font-size: 1vw; /* Tamaño del texto en relación con el ancho de la pantalla */
+  font-size: 0.75vw; /* Tamaño del texto en relación con el ancho de la pantalla */
 }
 
 
