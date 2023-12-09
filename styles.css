@@ -77,6 +77,51 @@ td {
   text-align: left;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* Reducir el tamaño de la fuente general */
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .header-content img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .bot-image {
+    width: 200px; /* Reducir el tamaño de la imagen del bot */
+    height: 200px;
+  }
+
+  .bot-info {
+    width: 90%; /* Ajustar el ancho del texto del bot */
+    left: 5%; /* Centrar el texto */
+    top: -15px; /* Ajustar la distancia desde la parte superior */
+    padding: 10px;
+    font-size: 14px; /* Reducir el tamaño de fuente */
+  }
+
+  #stats {
+    max-width: 90%; /* Ajustar el ancho de las estadísticas de GitHub */
+  }
+
+  h1, h2, h3 {
+    font-size: 24px; /* Reducir el tamaño de los títulos */
+  }
+
+  p {
+    font-size: 16px; /* Reducir el tamaño del texto normal */
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #b7edfc;
