@@ -25,17 +25,18 @@ margin-left: 50px;
 .bot-info {
   position: absolute;
   
-  width: 750px;
   padding: 5%;
   background-color: None;
   opacity: 0;
   transition: opacity 1.5s ease, left 1.5s ease;
   width: 50%;
-  left: 20%;
-  right: 10%;
-  top: -10%; /* Ajustar el posicionamiento relativo */
-  padding: 5%; /* Ajustar el padding con unidades relativas */
-  font-size: 1vw;
+  position: absolute;
+  width: 50%; /* Ancho del contenedor en relación con el tamaño de la pantalla */
+  left: 10%; /* Posición izquierda del contenedor */
+  right: 10%; /* Posición derecha del contenedor */
+  top: -10%; /* Posición desde la parte superior del contenedor */
+  padding: 5%; /* Ajuste de padding con unidades relativas */
+  font-size: 1vw; /* Tamaño del texto en relación con el ancho de la pantalla */
 }
 
 .bot-info.visible {
