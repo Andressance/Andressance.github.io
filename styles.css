@@ -4,7 +4,7 @@
 }
 @media screen and (max-width: 768px) {
   .bot-info {
-    font-size: 14px; /* Ajusta el tamaño del texto */
+    font-size: 0.5vw; /* Ajusta el tamaño del texto */
     left: 5%; /* Alineación hacia la izquierda */
     top: -15px; /* Posición desde arriba */
     padding: 10px; /* Espaciado interno */
