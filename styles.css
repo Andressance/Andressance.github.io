@@ -36,7 +36,7 @@ flex-direction: column;
   top: -10%; /* Posición desde la parte superior del contenedor */
   padding: 5%; /* Ajuste de padding con unidades relativas */
   font-size: 1vw; /* Tamaño del texto en relación con el ancho de la pantalla */
-  -webkit-text-size-adjust: 50%;
+  -webkit-text-size-adjust: 75%;
 }
 
 
