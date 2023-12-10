@@ -20,6 +20,22 @@ flex-direction: column;
   border-radius: 50%;
   border: 5px solid black;
   margin-left: 50px;
+  max-width: 100%;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.bot-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.bot-info p{
+  font-size: 20px;
+}
+
+.bot-info li {
+  font-size: 15px;
 }
 
 .bot-info {
@@ -29,22 +45,24 @@ flex-direction: column;
   opacity: 0;
   transition: opacity 1.5s ease, left 1.5s ease;
   width: 50%;
-  position: absolute;
-  width: 50%; /* Ancho del contenedor en relación con el tamaño de la pantalla */
   left: 10%; /* Posición izquierda del contenedor */
   right: 10%; /* Posición derecha del contenedor */
-  top: -10%; /* Posición desde la parte superior del contenedor */
-  padding: 5%; /* Ajuste de padding con unidades relativas */
-  font-size: 1vw; /* Tamaño del texto en relación con el ancho de la pantalla */
+  top: 10%; /* Posición desde la parte superior del contenedor */
+  padding: 0; /* Ajuste de padding con unidades relativas */
+  font-size: 1.5vw; /* Tamaño de fuente con unidades relativas */
   -webkit-text-size-adjust: 75%;
 }
 
 
 .bot-info.visible {
-opacity: 1;
-left: 40%;
-font-size: 1vw;
+  opacity: 1;
+  left: 45%; /* Porcentaje de la posición izquierda del contenedor */
+  top: 0px;
+  font-size: 0.75vw;
+  transition: left 0.3s ease; /* Agregar transición para un cambio suave */
 }
+
+
 
 #stats {
 border: 1px solid #ccc;
@@ -81,6 +99,12 @@ footer {
   margin-right: 10px;
 }
 
+.bot-container img {
+  width: 15%;
+  height: auto;
+  margin-right: 10px;
+}
+
 .bot-image {
   width: 50%;
   height: auto;
@@ -92,9 +116,6 @@ footer {
   max-width: 90%;
 }
 
-h1, h2, h3 {
-  font-size: 24px;
-}
 
 p {
   font-size: 16px;
@@ -103,6 +124,8 @@ p {
 table {
   width: 100%;
 }
+
+
 }
 
 h1, h2, h3 {
@@ -151,6 +174,7 @@ header {
   text-align: center;
 }
 
+
 .header-content {
   display: flex;
   align-items: center;
@@ -160,6 +184,13 @@ header {
 .header-content img {
   width: 80px;
   height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.bot-container img {
+  width: 333px;
+  height: auto;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -193,3 +224,71 @@ footer {
   text-align: center;
   padding: 10px 0;
 }
+
+h2 {
+  font-size: 2rem;
+ }
+
+ /* Hacer que las imágenes sean responsivas */
+ img {
+  max-width: 100%;
+  height: auto;
+ }
+ 
+ /* Hacer que la tabla sea responsiva y se adapte el ancho para que no se salga el contenido */
+
+ table {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1.2rem;
+ }
+
+ 
+ 
+ /* Tamaño de fuente para los elementos de contacto */
+ #contact p {
+  font-size: 1.2rem;
+ }
+
+#about li {
+  
+  font-size: 1.5rem;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+  
+h1 {
+  font-size: 3rem;
+}
+
+#about p {
+  font-size: 1.5rem;
+  
+}
+
+#projects li {
+  font-size: 1.5rem;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+#contributions li {
+  font-size: 1.5rem;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+#contact li {
+  font-size: 1.5rem;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+#contact p {
+  font-size: 1.5rem;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
