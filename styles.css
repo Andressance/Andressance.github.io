@@ -1,3 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  height: auto;
+  color: white;
+  background-color: #e9e9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.abanico img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  width: 900px;
+  height: 400px;
+  display: flex;
+  gap: 10px;
+  margin-inline: 50px;
+}
+
+.card {
+  min-width: 70px;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  --transition-timing: 0.25s;
+}
+.card.active {
+  flex-grow: 100;
+}
+
+.card > .background {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: left;
+  filter: brightness(0.8);
+  z-index: -1;
+  transition: var(--transition-timing) ease;
+}
+.card.active > .background {
+  filter: brightness(1) grayscale(0);
+}
+
+.card > .card-content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 20px;
+  overflow: hidden;
+  transition: var(--transition-timing);
+  z-index: 10;
+}
+.card.active > .card-content {
+  inset: 20px;
+  top: auto;
+}
+
+.card-content * {
+  transition: var(--transition-timing);
+}
+
+.card-content > .profile-image {
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card.active .profile-image {
+  border: 1px solid rgb(110, 252, 205);
+}
+.profile-image > svg {
+  stroke: #fefefe;
+}
+.card.active .profile-image > svg {
+  stroke: rgb(110, 252, 205);
+}
+
+.card-content > .title {
+  white-space: pre;
+  margin-left: 10px;
+  translate: 0 100%;
+  opacity: 0;
+  transition-delay: 0.3s;
+}
+.card.active .title {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.card > .backdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  z-index: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -14,269 +144,305 @@ display: flex;
 flex-direction: column;
 }
 
-#about   li {
-  display: inline-block;
-  background-color: #3aa0ff;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 5px;
-  transform: scale(1);
-  transition: transform 0.5s ease;
-}
+/* Agrega estos estilos al final de tu archivo styles.css */
 
-#about   li:hover {
-  background-color: #2267a0;
-  color: #fff;
-  transform: scale(1.1);
-  transition: transform 0.5s ease;
-}
-
-.bot-image {
-  width: 30%;
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid black;
-  margin-left: 50px;
-  max-width: 100%;
-}
-
-.bot-info p{
-  font-size: 20px;
-}
-
-.bot-info li {
-  font-size: 15px;
-}
-
-.bot-info {
-  position: absolute;
-  padding: 5%;
-  background-color: None;
-  opacity: 0;
-  transition: opacity 1.5s ease, left 1.5s ease;
-  width: 50%;
-  left: 10%; /* Posición izquierda del contenedor */
-  right: 10%; /* Posición derecha del contenedor */
-  top: 10%; /* Posición desde la parte superior del contenedor */
-  padding: 0; /* Ajuste de padding con unidades relativas */
-  font-size: 1.5vw; /* Tamaño de fuente con unidades relativas */
-  -webkit-text-size-adjust: 75%;
-}
-
-
-.bot-info.visible {
-  opacity: 1;
-  left: 45%; /* Porcentaje de la posición izquierda del contenedor */
-  top: 0px;
-  font-size: 0.75vw;
-  transition: left 0.3s ease; /* Agregar transición para un cambio suave */
-}
-
-
-
-#stats {
-border: 1px solid #ccc;
-border-radius: 8px;
-padding: 20px;
-background-color: #fff;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-max-width: 400px;
-margin: auto;
-}
-
-@media screen and (max-width: 768px) {
+/* Estilos generales */
 body {
-  font-size: 16px;
+  background-color: #f5f5f5; /* Fondo principal */
+  color: #333; /* Color de texto principal */
 }
 
 header {
-  background-color: #1b4d77;
-  color: #fff;
-  padding: 2vh; /* Ajustar el padding con unidades relativas */
-  text-align: center;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 2vh 0; /* Ajustar el padding vertical con unidades relativas */
-}
-
-.header-content img {
-  width: 15%;
-  height: auto;
-  margin-right: 10px;
-}
-
-.bot-container img {
-  width: 15%;
-  height: auto;
-  margin-right: 10px;
-}
-
-.bot-image {
-  width: 50%;
-  height: auto;
-  max-width: 100%;
-  height: auto;
-}
-
-#stats {
-  max-width: 90%;
-}
-
-
-p {
-  font-size: 16px;
-}
-
-table {
-  width: 100%;
-}
-
-
-}
-
-h1, h2, h3 {
-font-size: 28px;
-}
-
-p {
-font-size: 20px;
-}
-
-table {
-width: 90%;
-}
-
-table tr {
-border-bottom: 1px solid #ccc;
-}
-
-table tr:last-child {
-border-bottom: none;
-}
-
-td {
-padding: 10px 0;
-text-align: left;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #b7edfc;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 2vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-header {
-  background-color: #1b4d77;
-  color: #fff;
+  background-color: #fff; /* Fondo del encabezado */
   padding: 20px;
-  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutíl */
 }
-
 
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .header-content img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-right: 20px;
+  border-radius: 50%; /* Imagen de perfil redondeada */
+  margin-right: 15px;
+  width: 50px; /* Tamaño de la imagen */
+  height: 50px; /* Tamaño de la imagen */
 }
 
-.bot-container img {
-  width: 333px;
-  height: auto;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
-h1, h2 {
-  margin: 20px 0;
+.fadeIn {
+  opacity: 1; /* Animación de texto */
 }
 
 main {
   padding: 20px;
-  flex: 1;
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Espaciado entre secciones */
 }
 
-a {
-  color: #556B2F;
-  text-decoration: none;
+h1, h2, h3 {
+  color: #444; /* Color de títulos */
+}
+
+ul {
+  list-style: none; /* Lista sin viñetas */
 }
 
 ul li {
-  margin: 0;
-  padding: 0;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #007bff; /* Color del enlace */
+}
+
+/* Estilos de las tarjetas */
+.container {
+  display: flex;
+  gap: 10px;
+  margin-inline: 50px;
+  overflow-x: scroll; /* Scroll horizontal */
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+  transition: 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.card > .background {
+  filter: brightness(0.8) grayscale(1); /* Imagen en escala de grises */
+}
+
+.card.active > .background {
+  filter: brightness(1) grayscale(0);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  transition: 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  background: rgba(255, 255, 255, 0.9); /* Fondo del contenido */
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutíl */
+}
+
+.profile-image {
+  border: 2px solid #007bff; /* Borde de la imagen de perfil */
+}
+
+.card.active .profile-image {
+  border-color: #6ecbcd; /* Borde al activar la tarjeta */
+}
+
+.title {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.active .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card > .backdrop {
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7)); /* Degradado en la parte inferior */
+}
+/* Estilos de la sección de contacto */
+
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#contact ul li {
+  margin-bottom: 10px;
+}
+
+#contact ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+#contact ul li a img {
+  margin-right: 10px;
+  width: 15px; /* Tamaño de las imágenes */
+  height: 15px; /* Tamaño de las imágenes */
+}
+
+
+
+/* Estilos de la sección "bot-section" */
+
+.bot-image {
+  border-radius: 50%; /* Forma circular */
+  overflow: hidden; /* Ocultar cualquier parte de la imagen fuera del círculo */
+  width: 150px; /* Ancho de la imagen */
+  height: 150px; /* Altura de la imagen */
+}
+
+.bot-info {
+  margin-left: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos del header y footer */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Fondo del encabezado */
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutíl */
+  z-index: 100; /* Asegurar que esté por encima del resto del contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centrar el texto */
+}
+
+main {
+  padding-top: 80px; /* Ajustar el espacio para el header */
+  padding-bottom: 80px; /* Ajustar el espacio para el footer */
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Fondo del footer */
+  padding: 20px;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutíl hacia arriba */
+  z-index: 100; /* Asegurar que esté por encima del resto del contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centrar el texto */
 }
 
-h2 {
-  font-size: 2rem;
- }
+/* estilos de la tabla */
 
- /* Hacer que las imágenes sean responsivas */
- img {
-  max-width: 100%;
-  height: auto;
- }
- 
- /* Hacer que la tabla sea responsiva y se adapte el ancho para que no se salga el contenido */
-
- table {
+#stats table {
   width: 100%;
-  padding: 0;
   border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 1.2rem;
- }
+  margin-top: 20px;
+  border-radius: 10px; /* Bordes redondeados para toda la tabla */
+  overflow: hidden; /* Ocultar los bordes que excedan del radio */
+}
 
- 
- 
- /* Tamaño de fuente para los elementos de contacto */
- #contact p {
-  font-size: 1.2rem;
- }
+#stats table tr {
+  border-bottom: 1px solid #ddd; /* Línea entre filas */
+}
+
+#stats table th,
+#stats table td {
+  padding: 8px;
+  text-align: left;
+}
+
+#stats table th {
+  background-color: #f2f2f2; /* Fondo de las celdas de encabezado */
+  font-weight: bold;
+}
+
+#stats table td {
+  background-color: #fff; /* Fondo de las celdas de datos */
+}
+
+/* Estilos de la sección "about" */
+#about {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px; /* Aumentar el espacio alrededor del contenido */
+}
+
+#about h1 {
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+#about p {
+  margin-bottom: 15px; /* Espacio debajo de los párrafos */
+}
+
+#about ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px; /* Añadir margen superior para separar del título */
+}
+
+#about ul li {
+  width: 200px;
+  margin: 10px;
+  text-align: left;
+}
+
+#about ul li img {
+  display: block;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto; /* Centrar horizontalmente */
+}
 
 #about li {
-  
   font-size: 1.5rem;
   margin-left: 50px;
   margin-top: 10px;
 }
-  
-h1 {
-  font-size: 3rem;
-}
 
 #about p {
   font-size: 1.5rem;
-  
+  margin-left: 50px;
+  margin-top: 10px;
 }
+
+#about h2 {
+  font-size: 2rem;
+}
+
+#about ul li {
+  width: 200px;
+  margin: 10px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+#about ul li img {
+  display: block;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+#about ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Estilos de la sección "projects" */
 
 #projects li {
   font-size: 1.5rem;
@@ -300,4 +466,107 @@ h1 {
   font-size: 1.5rem;
   margin-left: 50px;
   margin-top: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+ }
+
+ /* Estilos para la sección del bot */
+#bot {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Espacio alrededor del contenido */
+}
+
+#bot h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#bot h3 {
+  font-size: 2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.bot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bot-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.bot-info {
+  text-align: left;
+}
+
+.bot-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.bot-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.bot-info ul li {
+  margin-bottom: 8px;
+}
+
+.inv {
+  margin-top: 20px;
+}
+
+.inv p {
+  font-size: 1.2rem;
+}
+
+
+/* Estilos para la sección de Acceso a la web de Neochitary */
+#web {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Espacio alrededor del contenido */
+}
+
+#web h3 {
+  font-size: 2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#web p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+
+.extra-content {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.extra-content.active {
+  opacity: 1;
 }
