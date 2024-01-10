@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
- <meta charset="UTF-8">
- <title>Andressance's Corner</title>
- <link rel="icon" href="https://avatars.githubusercontent.com/u/112200070?v=4" type="image/x-icon">
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <header>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Accordions 01</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+  </head>
+   <header>
  <div class="header-content">
    <img src="https://avatars.githubusercontent.com/u/112200070?v=4" alt="GitHub PFP">
    <h1 class="fadeIn">Andressance's Corner</h1>
@@ -17,26 +17,27 @@
  <main>
  <section id="about">
      <h1>Sobre mí:</h1>
-     <p>Estudiante de Ingeniería Informática. Desarrollador con experiencia en:</p>
+     <p>Estudiante de Ingeniería Informática, apasionado por los videojuegos, la programación y la inteligencia artificial. Desarrollador con experiencia en:</p>
      <ul>
-       <li>Java <img src="/images/java-logo-vector-1.svg" alt="Java" width="35"></li>
-       <li>Haskell <img src="/images/haskell.png" alt="Haskell" width="35"></li>
-       <li>C <img src="/images/C_Logo.png" alt="C" width="25"></li>
-       <li>Python <img src="/images/python.png" alt="Python" width="30"></li>
-       <li>HTML <img src="/images/html.png" alt="HTML" width="25"></li>
-       <li>CSS <img src="/images/css.png" alt="CSS" width="25"></li>
+       <li>Java <img src="./images/java-logo-vector-1.svg" alt="Java" width="35"></li>
+       <li>Haskell <img src="./images/haskell.png" alt="Haskell" width="35"></li>
+       <li>C <img src="./images/C_Logo.png" alt="C" width="25"></li>
+       <li>Python <img src="./images/python.png" alt="Python" width="30"></li>
+       <li>HTML <img src="./images/html.png" alt="HTML" width="25"></li>
+       <li>CSS <img src="./images/css.png" alt="CSS" width="25"></li>
      </ul>
      <p>Actualmente aprendiendo:</p>
      <ul>
-       <li>JavaScript <img src="/images/js.png" alt="JavaScript" width="45"></li>
-       <li>TypeScript <img src="/images/ts.png" alt="TypeScript" width="25"></li>
-       <li>Prolog <img src="/images/prolog.png" alt="Prolog" width="25"></li>
-       <li>SQL <img src="/images/sql.png" alt="SQL" width="25"></li>
-       <li>Unity <img src="/images/unity.png" alt="Unity" width="25"></li>
-       <li>Prompt Engeenering <span>🤖</span></li>
+       <li>JavaScript <img src="./images/js.png" alt="JavaScript"></li>
+       <li>TypeScript <img src="./images/ts.png" alt="TypeScript" width="25"></li>
+       <li>Prolog <img src="./images/prolog.png" alt="Prolog" width="25"></li>
+       <li>SQL <img src="./images/sql.png" alt="SQL" width="25"></li>
+       <li>Unity <img src="./images/unity.png" alt="Unity" width="25"></li>
+       <li>Prompt Engeenering</li>
      </ul>
    </section> 
    <div>
+    <br><br>
     <h1>Actividad:</h1>
      <section id="stats">
        <h1>Estadísticas de GitHub:</h1>
@@ -67,41 +68,113 @@
            </tr>
        </table>
      </section>
-   </div>
+    </div>
 
-<script>
-   fetch(`https://api.github.com/users/Andressance`)
-       .then(response => response.json())
-       .then(data => {
-           document.getElementById('username').innerText = data.login;
-           document.getElementById('public-repos').innerText = data.public_repos;
-           document.getElementById('followers').innerText = data.followers;
-           document.getElementById('following').innerText = data.following;
-       })
-       .catch(error => console.error('Error al obtener estadísticas:', error));
-</script>
- 
-   
-
-    
-   <section id="projects">
+    <script>
+       fetch(`https://api.github.com/users/Andressance`)
+           .then(response => response.json())
+           .then(data => {
+               document.getElementById('username').innerText = data.login;
+               document.getElementById('public-repos').innerText = data.public_repos;
+               document.getElementById('followers').innerText = data.followers;
+               document.getElementById('following').innerText = data.following;
+           })
+           .catch(error => console.error('Error al obtener estadísticas:', error));
+    </script>
+    <section class="abanico">
       <h1>Proyectos:</h1>
-      <ul>
-      <li><a href="https://github.com/Andressance/Discord.py-simple-moderator-bot" target="_blank">Bot simple de moderación usando Discord.py</a>
-       <span> ➜ Un bot de Discord con comandos de moderación simples.</span>
-     </li>
-      <li><a href="https://github.com/Andressance/AikenConvertor.git">Conversor de Word a formato "Aiken".</a>
-       <span> ➜ Un conversor de archivos Word (.docx) a formato válido para Moodle (Aiken) y un creador de archivos .txt en este mismo formato.</span>
-     </li>
-      </ul>
-   </section>
+      <!-- espacio en blanco hacia abajo-->
+      <br>
+      <div class="container">
+        <div class="card" data-project="discord-bot">
+          <img class="background" src="./images/dmb1.jpeg" alt="">
+          <div class="card-content">
+            <div class="profile-image">
+              <img src="./images/juez.png" alt="">
+            </div>
+            <h3 class="title">Discord Moderation bot</h3>
+          </div>
+          <div class="backdrop"></div>
+          <div class="extra-info" style="display: none;">
+            <p>Un bot de Discord con comandos de moderación simples usando Discord.py.</p>
+          </div>
+        </div>
+      
+        <div class="card" data-project="toAiken">
+          <img class="background" src="./images/word.png" alt="">
+          <div class="card-content">
+            <div class="profile-image">
+              <img src="./images/moodle-modified.png" alt="">
+            </div>
+            <h3 class="title">toAiken</h3>
+          </div>
+          <div class="backdrop"></div>
 
-   <section id="contributions">
-     <h2>Contribuciones:</h2>
-     <ul>
-       <li><a href="https://github.com/San1190/Password-Manager" target="_blank">Password Manager</a> <span> ➜ Un gestor de contraseñas con interfaz gráfica. Hecho por <a href="https://github.com/San1190/">@San1190</a>.</span></li>
-     </ul>
-   </section>
+          <div class="extra-info" style="display: none;">
+            <p>Un conversor de archivos Word (.docx) a formato válido para Moodle (Aiken) y un creador de archivos .txt en este mismo formato.</p>
+          </div>
+
+        </div>
+        <div class="card" data-project="toAiken">
+          <img class="background" src="./images/pm.jpeg" alt="">
+          <div class="card-content">
+            <div class="profile-image">
+              <img src="./images/candado.png" alt="">
+            </div>
+            <h3 class="title">Password Manager (contribución).</h3>
+          </div>
+          <div class="backdrop"></div>
+
+          <div class="extra-info" style="display: none;">
+            <p>Un gestor de contraseñas hecho por Un gestor de contraseñas con interfaz gráfica. Hecho por <a href="https://github.com/San1190/">@San1190</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    
+    </section>
+      <div class="extra-content">
+      <p>Selecciona un proyecto para obtener más información.</p>
+    </div>
+    <br>
+
+    <script>
+    const cards = document.querySelectorAll('.card');
+    const extraContent = document.querySelector('.extra-content');
+    const defaultText = extraContent.innerHTML;
+    
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const info = card.querySelector('.extra-info');
+        const activeInfo = document.querySelector('.extra-info.active');
+        const activeCard = document.querySelector('.card.active');
+      
+        if (info.classList.contains('active')) {
+          info.classList.remove('active');
+          card.classList.remove('active');
+          extraContent.classList.remove('active');
+          extraContent.style.opacity = '0';
+          setTimeout(() => {
+            extraContent.innerHTML = defaultText;
+          }, 300); // tiempo de la animación
+        } else {
+          if (activeInfo) {
+            activeInfo.classList.remove('active');
+            activeCard.classList.remove('active');
+          }
+          info.classList.add('active');
+          card.classList.add('active');
+          extraContent.style.opacity = '0';
+          setTimeout(() => {
+            extraContent.innerHTML = info.querySelector('p').textContent;
+            extraContent.classList.add('active');
+            extraContent.style.opacity = '1';
+          }, 300); // tiempo de la animación
+        }
+      });
+    });
+
+    </script>
     
  <section id="bot" class="bot-section">
      <h2>Proyectos en desarrollo:</h2>
@@ -135,32 +208,6 @@
   </section>
   
  </section>
- <script>
-  const image = document.querySelector('.bot-image');
-  const text = document.querySelector('.bot-info');
- 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        text.classList.add('visible');
-      } else {
-        text.classList.remove('visible');
-      }
-    });
-  }, { threshold: 1 });
- 
-  observer.observe(image);
- 
-  const textObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        text.classList.remove('visible');
-      }
-    });
-  }, { threshold: 0 });
- 
-  textObserver.observe(text);
- </script>
  <section id="contact">
   <h2>Contacto</h2>
   <p>Si quieres contactar conmigo, puedes hacerlo a través de:</p>
@@ -173,7 +220,7 @@
 </main>
 
 <footer>
- <p>&copy; 2023 andressance's page</p>
-</footer>
-</body>
+ <p>made with ♡ by Andressance</p>
+</footer> 
+  </body>
 </html>
