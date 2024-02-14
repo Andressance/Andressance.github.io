@@ -1,0 +1,121 @@
+
+  
+  button,
+  a {
+    all: unset;
+    cursor: pointer;
+  }
+ 
+
+/* Agregar esta regla para bloquear el scroll */
+.scroll-lock {
+  overflow: hidden;
+}
+
+
+/*ocultar*/
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.wrapper.open {
+  clip-path: circle(75%);
+}
+
+.wrapper ul {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  color: black;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.link {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50px;
+  position: relative;
+}
+
+.link::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  width: 104%;
+  height: 110%;
+  left: -2%;
+  top: -5%;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  animation: rotate 1.5s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.link:hover::after {
+  transform: scaleY(1);
+}
+
+.menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 100px; /* Ajusta la posición superior según sea necesario */
+  height: 50px;
+  width: 50px;
+  color: #000;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 130px; /* Ajusta la posición superior según sea necesario */
+  height: 50px;
+  width: 50px;
+  color: #000;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Regla para ocultar la sección "abanico" cuando el menú está abierto */
+.wrapper.open .abanico {
+  display: none;
+}
+
+.menu {
+  display: none; /* Default state: hidden */
+}
+
+.menu.open {
+  display: block; /* State when the menu should be visible */
+}
