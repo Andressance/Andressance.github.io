@@ -12,4 +12,3 @@ cardsContainer.addEventListener("click", (e) => {
   target.classList.add("active");
 });
 
-// Path: Accordions/02/script.js
