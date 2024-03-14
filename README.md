@@ -1,3 +1,3 @@
 # Andressance.github.io
 
-My page
+My personal page.
