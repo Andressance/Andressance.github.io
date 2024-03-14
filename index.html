@@ -155,49 +155,13 @@
     </div>
     <br>
 
-    <script>
-    const cards = document.querySelectorAll('.card');
-    const extraContent = document.querySelector('.extra-content');
-    const defaultText = extraContent.innerHTML;
-    
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const info = card.querySelector('.extra-info');
-        const activeInfo = document.querySelector('.extra-info.active');
-        const activeCard = document.querySelector('.card.active');
-      
-        if (info.classList.contains('active')) {
-          info.classList.remove('active');
-          card.classList.remove('active');
-          extraContent.classList.remove('active');
-          extraContent.style.opacity = '0';
-          setTimeout(() => {
-            extraContent.innerHTML = defaultText;
-          }, 300); // tiempo de la animación
-        } else {
-          if (activeInfo) {
-            activeInfo.classList.remove('active');
-            activeCard.classList.remove('active');
-          }
-          info.classList.add('active');
-          card.classList.add('active');
-          extraContent.style.opacity = '0';
-          setTimeout(() => {
-            extraContent.innerHTML = info.querySelector('p').textContent;
-            extraContent.classList.add('active');
-            extraContent.style.opacity = '1';
-          }, 300); // tiempo de la animación
-        }
-      });
-    });
-
-    </script>
+    <script src="slider.js"></script>
     
  <section id="bot" class="bot-section">
      <h2>Proyectos en desarrollo:</h2>
      <h3>Neochitary:</h3>
    <div class="bot-container">
-     <img src="https://media.discordapp.net/attachments/771370078331600906/1178435472071065640/image.png?ex=657f5d0e&is=656ce80e&hm=c4414a042227ca8c10c081fd84b6bc3ae081f1059ed909405da964286fc6a216&=&format=webp&quality=lossless&width=666&height=666" alt="Bot de Discord" class="bot-image">
+     <img src="https://top.gg/_next/image?url=https%3A%2F%2Fimages.discordapp.net%2Favatars%2F1176859590214815774%2Fea3126f310f015ddbae7d4a9c251b0cb.png%3Fsize%3D128&w=128&q=75&width=666&height=666" alt="Bot de Discord" class="bot-image">
      <div class="bot-info">
       <p>Neochitary es un bot de Discord multifuncional. Algunas de sus funcionalidades incluyen:</p>
       <ul>
